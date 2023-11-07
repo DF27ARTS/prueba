@@ -10,7 +10,8 @@ export default function Home() {
   if (isLoading) return <div>Loading...</div>;
   if (error) return <div>{error.message}</div>;
 
-  if (user)
+  if (user) {
+    console.log(user)
     return (
       <>
         {user !== undefined ? (
@@ -22,6 +23,7 @@ export default function Home() {
         ) : null}
       </>
     );
+  }
 
   return <a href="/api/auth/login">Log in</a>;
 }
